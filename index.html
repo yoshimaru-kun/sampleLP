@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【商品・サービス名】 | 働く女性のための〇〇</title>
+    <meta name="description" content="【商品・サービス名】は、毎日忙しい30〜40代の働く女性のための〇〇サービスです。あなたの悩みを解決し、ワンランク上の日常を提供します。">
+    
+    <!-- OGP Settings -->
+    <meta property="og:title" content="【商品・サービス名】 | 働く女性のための〇〇">
+    <meta property="og:description" content="毎日忙しい30〜40代の働く女性のための〇〇サービス。あなたの悩みを解決し、ワンランク上の日常を提供します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/lp">
+    <meta property="og:image" content="https://example.com/ogp-image.jpg">
+    <meta property="og:site_name" content="【商品・サービス名】">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS variables */
+        :root {
+            --main-color: #E91E8C; /* Pink */
+            --sub-color: #FFFFFF;
+            --accent-color: #FFD700; /* Gold */
+            --text-color: #333333;
+            --light-bg: #FCF8F9;
+            --cta-green: #27AE60;
+            --font-sans: 'Noto Sans JP', sans-serif;
+            --font-serif: 'Noto Serif JP', serif;
+            --font-eng: 'Cormorant Garamond', serif;
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            background-color: var(--sub-color);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--main-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 1rem auto 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        .btn-main {
+            background: linear-gradient(135deg, #E91E8C, #FF6B9E);
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(233, 30, 140, 0.4);
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #27AE60, #2ECC71);
+            color: white;
+            font-size: 1.3rem;
+            padding: 1.2rem 3rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+        }
+
+        /* 1. Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* 2. Problem Section */
+        .problem {
+            background-color: var(--light-bg);
+        }
+
+        .problem-box {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--main-color);
+        }
+
+        .problem-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .problem-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* 3. Solution Section */
+        .solution {
+            text-align: center;
+        }
+
+        .solution-lead {
+            font-size: 1.5rem;
+            color: var(--main-color);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            font-family: var(--font-serif);
+        }
+
+        .solution-desc {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        /* 4. Features Section */
+        .features {
+            background-color: var(--light-bg);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid rgba(233, 30, 140, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), #FFE873);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--main-color);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--main-color);
+        }
+
+        /* 5. Pricing Section */
+        .pricing {
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: white;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 2px solid var(--accent-color);
+        }
+
+        .pricing-header {
+            background: var(--main-color);
+            color: white;
+            padding: 2rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: var(--font-eng);
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .pricing-body {
+            padding: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        /* 6. Testimonials Section */
+        .testimonials {
+            background-color: var(--light-bg);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            font-size: 2rem;
+            color: rgba(233, 30, 140, 0.1);
+        }
+
+        .testimonial-content {
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.5rem;
+        }
+
+        .user-info p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .user-info .name {
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+        /* 7. FAQ Section */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-summary {
+            padding: 1.2rem 1.5rem;
+            background: white;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--main-color);
+            transition: transform 0.3s;
+        }
+
+        details[open] .faq-summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 1.5rem;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            color: #555;
+        }
+
+        /* 8. CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(233, 30, 140, 0.9), rgba(233, 30, 140, 0.9)), url('https://images.unsplash.com/photo-1556909211-36987dc33eaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            padding: 5rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* 9. Footer */
+        .footer {
+            background: #222;
+            color: white;
+            padding: 3rem 5% 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #777;
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .testimonial-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .problem-list li {
+                font-size: 1.2rem;
+            }
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <h1>自信に満ちた、<br>私らしい毎日を手に入れる</h1>
+        <p>忙しい30代・40代の女性へ贈る、<br class="sp-only">上質な〇〇プログラム</p>
+        <a href="#cta" class="btn btn-main">今すぐ詳細を見る <i class="fas fa-chevron-right"></i></a>
+    </header>
+
+    <!-- 2. Problem Section -->
+    <section class="problem container">
+        <h2 class="section-title">こんなお悩みありませんか？</h2>
+        <div class="problem-box">
+            <ul class="problem-list">
+                <li><i class="fas fa-check"></i> 毎日仕事と家事に追われて、自分の時間がない</li>
+                <li><i class="fas fa-check"></i> 年齢とともに、これまで通りのケアでは物足りない</li>
+                <li><i class="fas fa-check"></i> もっと自分に自信を持ちたいけれど、何から始めればいいかわからない</li>
+                <li><i class="fas fa-check"></i> 気軽に相談できるプロのサポートが欲しい</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3. Solution Section -->
+    <section class="solution container">
+        <h2 class="section-title">そのお悩み、私たちが解決します</h2>
+        <p class="solution-lead">「【商品・サービス名】」で、本来の輝きを取り戻す</p>
+        <p class="solution-desc">
+            私たちは、現代を忙しく生きる女性のために、無駄を省き本当に必要なものだけを厳選したサービスを開発しました。プロフェッショナルによるパーソナライズされたサポートで、あなたのライフスタイルに寄り添い、確かな変化へと導きます。
+        </p>
+    </section>
+
+    <!-- 4. Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">選ばれる3つの理由</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                    <h3>上質なパーソナルケア</h3>
+                    <p>一人ひとりのお悩みやライフスタイルに合わせた、オーダーメイドのプランをご提案します。あなただけの特別な時間を提供します。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3>隙間時間で完結</h3>
+                    <p>忙しい毎日の中でも無理なく続けられるよう、1回15分から始められる効率的なプログラム設計を採用しています。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>専任プロのサポート</h3>
+                    <p>経験豊富な専門スタッフが、あなたの目標達成まで伴走します。いつでもオンラインで気軽に相談できる環境が整っています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Pricing Section -->
+    <section class="pricing container">
+        <h2 class="section-title">料金プラン</h2>
+        <div class="pricing-card">
+            <div class="pricing-header">
+                <h3>スタンダードプラン</h3>
+                <div class="price">&yen;9,800<span> /月</span></div>
+            </div>
+            <div class="pricing-body">
+                <ul class="pricing-features">
+                    <li>月4回のオンラインセッション</li>
+                    <li>24時間チャットサポート</li>
+                    <li>専用アプリでの進捗管理</li>
+                    <li>オリジナルケアキット毎月お届け</li>
+                </ul>
+                <a href="#cta" class="btn btn-main" style="width: 100%;">お申し込みはこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-content">「仕事が忙しく自分を労る時間がありませんでしたが、このサービスに出会ってから、短時間でリフレッシュできるようになりました。毎日が楽しくなりました！」</p>
+                    <div class="testimonial-user">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-info">
+                            <p class="name">A.M 様 (34歳・会社員)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">「年齢を重ねるにつれ増えていた悩みが、プロのアドバイスでみるみる解消。高級感のあるパッケージが毎月届くのもモチベーションに繋がっています。」</p>
+                    <div class="testimonial-user">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-info">
+                            <p class="name">Y.K 様 (41歳・自営業)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-content">「オンラインで完結するので、子供が寝た後の少しの時間を有効活用できています。丁寧なサポートのおかげで、自分に自信が持てるようになりました。」</p>
+                    <div class="testimonial-user">
+                        <div class="user-icon"><i class="fas fa-user"></i></div>
+                        <div class="user-info">
+                            <p class="name">S.T 様 (38歳・主婦)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section class="faq container">
+        <h2 class="section-title">よくあるご質問</h2>
+        
+        <details class="faq-item" open>
+            <summary class="faq-summary">初心者でも大丈夫ですか？</summary>
+            <div class="faq-answer">はい、全く問題ありません。お客様の現在の状況に合わせて、無理のないペースで進められるようサポートいたします。</div>
+        </details>
+        
+        <details class="faq-item">
+            <summary class="faq-summary">解約はいつでもできますか？</summary>
+            <div class="faq-answer">はい、最低利用期間などの縛りはございません。マイページからいつでも簡単に解約のお手続きが可能です。</div>
+        </details>
+        
+        <details class="faq-item">
+            <summary class="faq-summary">支払い方法は何がありますか？</summary>
+            <div class="faq-answer">クレジットカード（Visa, Mastercard, JCB, AMEX）、および一部の電子決済がご利用いただけます。</div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-summary">忙しくて時間が取れるか不安です。</summary>
+            <div class="faq-answer">1回15分から取り組めるプログラムをご用意しております。通勤時間や就寝前のちょっとした時間を活用してご継続いただけます。</div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-summary">サポートはどのように受けられますか？</summary>
+            <div class="faq-answer">専用のチャットアプリを通じて、いつでもご相談いただけます。専任のスタッフが24時間以内にご返信いたします。</div>
+        </details>
+    </section>
+
+    <!-- 8. CTA Section -->
+    <section id="cta" class="cta-section">
+        <h2>新しい自分に出会う準備はできましたか？</h2>
+        <p>まずは無料トライアルからお試しください。</p>
+        <a href="#" class="btn btn-cta">今すぐ無料で始める <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">運営会社</a>
+            <a href="#">利用規約</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">特定商取引法に基づく表記</a>
+            <a href="#">お問い合わせ</a>
+        </div>
+        <p class="copyright">&copy; 2026 【商品・サービス名】 All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
